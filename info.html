@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Fill in your budget details
+{% endblock %}
+
+{% block content %}
+
+    <h2 class="p-1 mt-5 border-3 border border-dark"> Budgeting details </h2>
+    <br>
+    <form action="/" method="post">
+
+        <div class="form-group mb-3">
+            <label for="budget" style="font-size: 20px">Income</label>
+            <input class="form-control" name="salary" type="number" placeholder="Input your monthly Income" min="1">
+            <br>
+            <label for="savings" style="font-size: 20px">Saving</label>
+            <input class="form-control" name="saving" type="number" placeholder="Input your monthly savings" min="1">
+            <br>
+            <label for="expenses" style="font-size: 20px">Expenses</label>
+            <input class="form-control" name="expense" type="number" placeholder="Input your monthly expenses" min="1">
+        </div>
+
+        <button class="btn btn-outline-info" type="submit">Submit</button>
+    </form>
+    <br>
+
+<!-- Display first error message -->
+    {% if error %}
+        <div class="alert alert-warning" role="alert">
+            {{error}}
+        </div>
+    {% endif %}
+
+<!-- Display second error message -->
+    {% if error2 %}
+        <div class="alert alert-warning" role="alert">
+            {{error2}}
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS 5.3 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <!-- CSS -->
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title> {% block title %}{% endblock %} </title>
+    </head>
+
+    <body style="background-color: #f0f0f0">
+        <div class="wrapper">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/"><span class="text-warning">Track</span><span class="text-dark">get</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbar">
+                            <div class="navbar-nav w-50 nav-justified nav nav-tabs">
+                                <a class="nav-item nav-link text-light" id="about" href="/about">About</a>
+                                {% if session["trackget"] == True %}
+                                    <a class="nav-item nav-link text-light" id="trackget" href="/trackget">Tracker</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="content container">
+                    {% block content %}{% endblock %}
+                </div>
+                <footer class="bg-secondary text-light text-center">
+                    <p>Trackget &copy; 2025</p>
+                    <p>For more information, contact <a class="text-light" href="mailto:trackgetoffical@gmail.com"></a>trackgetoffical@gmail.com</p>
+                </footer>
+            </div>
+        </body>
+
+    </html>
