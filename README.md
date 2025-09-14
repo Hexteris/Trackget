@@ -1,6 +1,6 @@
 # Trackget - Budget Feedback Web App
 
-## Video Demo
+## Link to Web Page
 
 https://trackget.pythonanywhere.com/
 
